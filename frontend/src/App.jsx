@@ -10,11 +10,16 @@ import PostsListPage from './pages/PostsListPage';
 import PostDetailPage from './pages/PostDetailPage'; // Importa la nuova pagina di dettaglio
 import AboutPage from './pages/AboutPage';
 
+//* importo PostsProvider
+import { PostsProvider } from './context/PostsContext';
+
 // Importa il componente Layout che contiene la Navbar e il footer comuni.
 import Layout from './components/Layout';
 
 function App() {
   return (
+  //* Avvolgo l'intera applicazione in PostsProvider per fornire i dati dei post a tutti i componenti figli.
+  <PostsProvider>
     // BrowserRouter avvolge l'intera applicazione per abilitare il routing basato sulla cronologia del browser.
     <Router>
       {/* Routes è un contenitore per tutte le definizioni delle rotte. */}
@@ -46,6 +51,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+  </PostsProvider>
   );
 }
 export default App;
