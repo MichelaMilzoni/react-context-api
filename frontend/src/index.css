@@ -1,0 +1,26 @@
+/* frontend/src/index.css */
+
+/* Importa gli stili CSS di Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Stili globali per il body e il div #root */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Assicurati di avere questo font o scegli un fallback */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa; /* Colore di sfondo leggero */
+  color: #333;
+  padding-top: 56px; /* Spazio per la navbar fissa in alto di Bootstrap */
+}
+
+#root {
+  max-width: 1200px; /* Larghezza massima del contenuto */
+  margin: 0 auto; /* Centra il contenuto */
+}
+
+/* Stili per la classe 'active' di NavLink (per evidenziare il link attivo) */
+.nav-link.active {
+  font-weight: bold;
+  color: #00c6ff !important; /* Colore personalizzato per il link attivo */
+}
