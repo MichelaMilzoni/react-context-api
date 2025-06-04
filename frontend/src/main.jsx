@@ -15,3 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App /> {/* Il componente radice della tua applicazione */}
   </React.StrictMode>,
 );
+
+
+//* messaggio di prova per vedere se riesco a caricare su github
