@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Importa i componenti delle pagine del tuo blog.
 import HomePage from './pages/HomePage';
-import PostsListPage from './pages/PostsListPage';
+import PostsPage from './pages/PostsPage';
 import PostDetailPage from './pages/PostDetailPage'; // Importa la nuova pagina di dettaglio
 import AboutPage from './pages/AboutPage';
 
@@ -31,7 +31,7 @@ function App() {
               Quando l'URL è "/", HomePage verrà renderizzata nell'Outlet del Layout. */}
           <Route index element={<HomePage />} />
           {/* Rotta per la lista dei post. */}
-          <Route path="posts" element={<PostsListPage />} />
+          <Route path="posts" element={<PostsPage />} />
           {/* Rotta per il dettaglio del singolo post.
               :id è un parametro dinamico che verrà letto con useParams in PostDetailPage.jsx */}
           <Route path="posts/:id" element={<PostDetailPage />} />
