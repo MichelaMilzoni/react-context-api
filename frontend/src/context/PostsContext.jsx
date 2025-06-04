@@ -11,6 +11,31 @@ const PostsContext = createContext(null); // O un valore predefinito vuoto/inizi
 export const PostsProvider = ({ children }) => {
  
     // inserire logica con useState e useEffect per gestire i post
+    //* creo 3 stati per: post, caricamento ed errore
+  const [posts, setPosts] = useState([]); // Stato per i post
+  const [loading, setLoading] = useState(true); // Stato per il caricamento
+  const [error, setError] = useState(null); // Stato per l'errore
+
+  //* uso useEffect per effettuare la chiamata API quando il componente viene montato
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true); // Imposto il caricamento a true prima della chiamata
+      setError(null); // Resetta l'errore prima della chiamata
+      try {
+        const response = await axios.get('http://localhost:4000/api/posts');
+        setPosts(response.data); // Imposto i post ricevuti dalla risposta
+      } catch (err) {
+        setError(err); // Imposto l'errore se la chiamata fallisce
+        console.error('Errore nel recupero dei post:', err); // Log dell'errore
+      } finally {
+        setLoading(false); // Imposto il caricamento a false dopo la chiamata
+      }
+    };
+
+    fetchPosts(); // Chiamo la funzione per ottenere i post
+  }, 
+  []); // L'array vuoto significa che l'effetto viene eseguito solo al montaggio del componente
+  
 
   return (
     <PostsContext.Provider value={{ posts, loading, error }}>
