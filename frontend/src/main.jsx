@@ -17,4 +17,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 
 
-//* messaggio di prova per vedere se riesco a caricare su github
